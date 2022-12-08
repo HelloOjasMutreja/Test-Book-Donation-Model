@@ -1,0 +1,82 @@
+<a href="myaccount.html" class="tm-logo-container">
+    <svg
+      style="fill: white"
+      width="30px"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 448 512"
+    >
+      <path
+        d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+      />
+    </svg>
+  </a>
+</div>
+<div class="col-5 col-md-8 ml-auto mr-0">
+  <div class="tm-site-nav">
+
+    <nav class="navbar bg-light fixed-top">
+      <div class="container-fluid">
+        <a href="#" class="tm-logo-container">
+    <svg
+      style="fill: white"
+      width="30px"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 448 512"
+    >
+      <path
+        d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+      />
+    </svg>
+  </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">User Functionality</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+
+              <% if current_user %>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to "Give", new_list_path %>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to "Need", lists_path %>            
+              </li>
+              
+              <li class="nav-item">
+                <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+              </li>
+
+
+              <% else %>
+
+              <li class="nav-item">
+                <%= link_to "Sign Up", new_user_registration_path, class:"nav-link" %>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to "Sign In", new_user_session_path, class:"nav-link" %>
+              </li>
+
+              <% end %>
+              
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

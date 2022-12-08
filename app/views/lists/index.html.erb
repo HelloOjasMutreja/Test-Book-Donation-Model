@@ -1,0 +1,118 @@
+<div class="container-fluid" style="padding-top: 7%">
+  <div id="content" class="mx-auto tm-content-container">
+    <main>
+      <div class="row">
+        <div class="col-12">
+          <h2
+            class="tm-page-title mb-4"
+            style="
+              font-family: 'League Script', cursive;
+              font-size: 4rem;
+              -webkit-text-stroke: 2px black;
+              padding-left: 1rem;
+            "
+          >
+            Books for donation
+          </h2>
+        </div>
+      </div>
+
+      <nav class="navbar bg-light">
+       <div class="container-fluid">
+        <%# render "search/form" %>
+       </div>
+      </nav>
+
+
+      <div class="container-fluid">
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            style="border-radius: 50px"
+          />
+          <button
+            class="btn btn-dark text-center mb-3"
+            type="submit"
+            style="
+              border-radius: 50px;
+              font-size: 1em;
+              padding: 0.5rem;
+              padding-right: 2rem;
+              padding-left: 2rem;
+              margin-left: 1rem;
+            "
+          >
+            Search
+          </button>
+        </form>
+        <div class="tm-categories-container mb-5">
+          <h3 class="tm-text-primary tm-categories-text">
+            Categories:
+          </h3>
+          <ul class="nav tm-category-list">
+            <li class="nav-item tm-category-item">
+              <a href="#" class="nav-link tm-category-link active"
+                >All</a
+              >
+            </li>
+            <li class="nav-item tm-category-item">
+              <a href="#" class="nav-link tm-category-link">Maths</a>
+            </li>
+            <li class="nav-item tm-category-item">
+              <a href="#" class="nav-link tm-category-link">Science</a>
+            </li>
+            <li class="nav-item tm-category-item">
+              <a href="#" class="nav-link tm-category-link">Fiction</a>
+            </li>
+            <li class="nav-item tm-category-item">
+              <a href="#" class="nav-link tm-category-link"
+                >Non-fiction</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="row tm-catalog-item-list">
+
+        <div id="lists">
+         <% @lists.each do |list| %>
+            <%= render list %>
+            <p>
+            <%= link_to "Show this list", list %>
+            </p>
+          <% end %>
+        </div>
+
+      </div>
+    
+
+      <!-- Catalog Paging Buttons -->
+      <div>
+        <ul class="nav tm-paging-links">
+          <li class="nav-item active">
+            <a href="#" class="nav-link tm-paging-link">1</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link tm-paging-link">2</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link tm-paging-link">3</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link tm-paging-link">4</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link tm-paging-link">></a>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>

@@ -1,0 +1,33 @@
+<div id="<%= dom_id list %>">
+  <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+    <div
+      class="position-relative tm-thumbnail-container text-center"
+    >
+      <img
+        src="img/tn-01.jpg"
+        alt="Image"
+        class="img-fluid tm-catalog-item-img"
+        style="max-height: 300px"/>
+      <a href="video-page.html"
+        class="position-absolute tm-img-overlay">
+      </a>
+    </div>
+    <div class="p-4 tm-bg-gray tm-catalog-item-description">
+      
+      <h3 class="tm-text-primary mb-3 tm-catalog-item-title">
+        <p><%= list.title %></p>
+      </h3>
+      <%
+=begin%>
+ <h4>listed by <%= list.user %></h4> 
+<%
+=end%>
+
+      <p><strong>Description:</strong><%= list.description %></p>
+
+      <p><strong>Author:</strong><%= list.author %></p>
+
+      <p><%= pluralize list.comments.count, "review" %><%= link_to "I need this", @list %></p>
+    </div>
+  </div>
+</div>
